@@ -1,0 +1,21 @@
+MACRO
+NUMBER1       &A,&B=2000
+A           1,&A
+L           2,&B
+MEND
+MACRO
+NUMBER2       &C,&D=5000
+L           3,&C
+ST          4,&D
+MEND
+
+PRG2        START
+            USING                   *,BASE
+            NUMBER1                   1000
+            NUMBER2                   3000,4000
+FOUR        DC                      F'4'
+FIVE        DC                      F'5'
+BASE        EQU                     8
+TEMP        DS                      1F
+            DROP                    8
+            END
